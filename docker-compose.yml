@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: kavak-postgres
+    environment:
+      POSTGRES_DB: kavakpostgre
+      POSTGRES_USER: kavak
+      POSTGRES_PASSWORD: kavak
+    ports:
+      - "5432:5432"
+    volumes:
+      - kavak_pgdata:/var/lib/postgresql/data
+
+volumes:
+  kavak_pgdata:
