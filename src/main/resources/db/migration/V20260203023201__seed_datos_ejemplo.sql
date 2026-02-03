@@ -4,9 +4,9 @@
 -- Vehículos
 INSERT INTO vehiculos (id, patente, marca, modelo, anio, kilometraje_actual)
 VALUES
-    (1, 'AA123BB', 'Toyota', 'Corolla', 2020, 45000),
-    (2, 'AB456CD', 'Ford', 'Focus', 2018, 80000),
-    (3, 'AC789EF', 'Volkswagen', 'Golf', 2019, 62000);
+    (1, 'AA123BB', 'TOYOTA', 'COROLLA', 2020, 45000),
+    (2, 'AB456CD', 'FORD', 'FOCUS', 2018, 80000),
+    (3, 'AC789EF', 'VOLKSWAGEN', 'GOLF', 2019, 62000);
 
 -- Mantenimientos
 -- Estados esperados: PENDIENTE, EN_PROCESO, COMPLETADO, CANCELADO
