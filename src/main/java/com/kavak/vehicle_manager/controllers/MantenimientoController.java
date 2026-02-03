@@ -1,6 +1,5 @@
 package com.kavak.vehicle_manager.controllers;
 
-import com.kavak.vehicle_manager.api.dto.*;
 import com.kavak.vehicle_manager.api.dto.mantenimiento.mapper.MantenimientoMapper;
 import com.kavak.vehicle_manager.api.dto.mantenimiento.request.MantenimientoCambiarEstadoRequest;
 import com.kavak.vehicle_manager.api.dto.mantenimiento.request.MantenimientoCompletarRequest;
@@ -23,7 +22,7 @@ import java.util.List;
 
 @Tag(name = "Mantenimientos", description = "Operaciones de registro y gestión de mantenimientos asociados a vehículos")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class MantenimientoController {
 
     private final MantenimientoService mantenimientoService;

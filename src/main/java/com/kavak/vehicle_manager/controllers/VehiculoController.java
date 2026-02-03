@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Vehículos", description = "Operaciones de registro, consulta y actualización de vehículos")
 @RestController
-@RequestMapping("/api/vehiculos")
+@RequestMapping("/api/v1/vehiculos")
 public class VehiculoController {
 
     private final VehiculoService vehiculoService;
