@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/kavakpostgre
+    url: jdbc:postgresql://localhost:5432/kavakpostgre?options=-c%20TimeZone%3DUTC
     username: kavak
     password: kavak
     driver-class-name: org.postgresql.Driver
