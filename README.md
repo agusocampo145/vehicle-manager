@@ -64,7 +64,7 @@ http://localhost:8080/swagger-ui/index.html
 - Registrar mantenimiento asociado a un vehículo
 - Listar historial de mantenimientos por vehículo
 - Listar mantenimientos activos
-- Cambiar estado (`PENDIENTE → EN_PROCESO / CANCELADO`)
+- Cambiar estado (`PENDIENTE → EN_PROCESO / CANCELADO, COMPLETADO`)
 - Completar mantenimiento con costo final
 - Calcular costo total de mantenimientos completados
 
