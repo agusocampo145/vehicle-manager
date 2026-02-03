@@ -1,5 +1,6 @@
 package com.kavak.vehicle_manager.domain.models;
 
+import com.kavak.vehicle_manager.exceptions.ReglaDeNegocioException;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -41,7 +42,7 @@ public class Vehiculo {
 
     public void actualizarKilometraje(Integer nuevoKilometraje) {
         if (nuevoKilometraje < this.kilometrajeActual) {
-            throw new IllegalArgumentException("El kilometraje no puede disminuir");
+            throw new ReglaDeNegocioException("El kilometraje no puede disminuir");
         }
         this.kilometrajeActual = nuevoKilometraje;
     }
