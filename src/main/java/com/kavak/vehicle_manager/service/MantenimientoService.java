@@ -24,6 +24,7 @@ public class MantenimientoService {
     @Autowired
     private  VehiculoRepository vehiculoRepository;
 
+
     @Transactional
     public Mantenimiento registrarMantenimiento(
             Long vehiculoId,
