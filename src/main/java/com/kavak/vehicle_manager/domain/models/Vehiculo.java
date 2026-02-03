@@ -33,9 +33,9 @@ public class Vehiculo {
     private Integer kilometrajeActual;
 
     public Vehiculo(String patente, String marca, String modelo, Integer anio, Integer kilometrajeActual) {
-        this.patente = patente;
-        this.marca = marca;
-        this.modelo = modelo;
+        this.patente = normalizar(patente);
+        this.marca = normalizar(marca);
+        this.modelo = normalizar(modelo);
         this.anio = anio;
         this.kilometrajeActual = kilometrajeActual;
     }
@@ -46,5 +46,10 @@ public class Vehiculo {
         }
         this.kilometrajeActual = nuevoKilometraje;
     }
+
+    private String normalizar(String valor) {
+        return valor == null ? null : valor.trim().toUpperCase();
+    }
+
 }
 
