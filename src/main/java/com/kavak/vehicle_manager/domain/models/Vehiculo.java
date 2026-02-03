@@ -2,6 +2,7 @@ package com.kavak.vehicle_manager.domain.models;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -30,8 +31,7 @@ public class Vehiculo {
     @Column(name = "kilometraje_actual", nullable = false)
     private Integer kilometrajeActual;
 
-    public Vehiculo(Long id, String patente, String marca, String modelo, Integer anio, Integer kilometrajeActual) {
-        this.id = id;
+    public Vehiculo(String patente, String marca, String modelo, Integer anio, Integer kilometrajeActual) {
         this.patente = patente;
         this.marca = marca;
         this.modelo = modelo;
