@@ -54,11 +54,54 @@ public class Mantenimiento {
             String descripcion,
             BigDecimal costoEstimado
     ) {
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("El vehículo es obligatorio");
+        }
+        if (tipoMantenimiento == null) {
+            throw new IllegalArgumentException("El tipo de mantenimiento es obligatorio");
+        }
+        if (costoEstimado == null || costoEstimado.signum() < 0) {
+            throw new IllegalArgumentException("El costo estimado debe ser cero o positivo");
+        }
+
         this.vehiculo = vehiculo;
         this.tipoMantenimiento = tipoMantenimiento;
         this.descripcion = descripcion;
         this.costoEstimado = costoEstimado;
         this.fechaCreacion = LocalDateTime.now();
         this.estado = EstadoMantenimiento.PENDIENTE;
+    }
+
+    public void iniciar() {
+        if (this.estado != EstadoMantenimiento.PENDIENTE) {
+            throw new IllegalStateException("Solo se puede iniciar un mantenimiento en estado PENDIENTE");
+        }
+        this.estado = EstadoMantenimiento.EN_PROCESO;
+    }
+
+    public void cancelar() {
+        if (this.estado == EstadoMantenimiento.COMPLETADO) {
+            throw new IllegalStateException("Un mantenimiento COMPLETADO no puede ser cancelado");
+        }
+        if (this.estado == EstadoMantenimiento.CANCELADO) {
+            return;
+        }
+        this.estado = EstadoMantenimiento.CANCELADO;
+    }
+
+    public void completar(BigDecimal costoFinal) {
+        if (this.estado != EstadoMantenimiento.EN_PROCESO) {
+            throw new IllegalStateException("Solo se puede completar un mantenimiento en estado EN_PROCESO");
+        }
+        if (costoFinal == null || costoFinal.signum() < 0) {
+            throw new IllegalArgumentException("El costo final debe ser cero o positivo");
+        }
+
+        this.costoFinal = costoFinal;
+        this.estado = EstadoMantenimiento.COMPLETADO;
+    }
+
+    public boolean estaActivo() {
+        return this.estado == EstadoMantenimiento.PENDIENTE || this.estado == EstadoMantenimiento.EN_PROCESO;
     }
 }
