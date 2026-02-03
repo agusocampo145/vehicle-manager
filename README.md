@@ -173,7 +173,7 @@ La estructura del proyecto permite agregar tests unitarios fácilmente en la cap
 
 ## 🤖 Uso de IA como asistencia
 
-Durante el desarrollo se utilizó **ChatGPT** como apoyo puntual para:
+Durante el desarrollo se utilizó **ChatGPT 5.2** como apoyo puntual para:
 - Generar código boilerplate
 - Validar decisiones de diseño
 - Contrastar buenas prácticas de arquitectura
