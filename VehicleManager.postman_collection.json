@@ -1,0 +1,338 @@
+{
+  "info": {
+    "_postman_id": "838c07de-675d-48e2-bf5a-c2c7f63659e2",
+    "name": "VehicleManager",
+    "description": "### Welcome to Postman! This is your first collection.\n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests  \n• Test your API in real-world scenarios  \n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Vehiculos",
+      "item": [
+        {
+          "name": "CrearVehiculo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "cd473b3a-700a-494c-ac44-20c03519e2c6",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "e4972050-91fe-48f0-ba5b-ecd01f37dde6",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "id": "1f92a415-312b-4a53-bac9-3d9fd2fdf4e2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patente\": \"AB045UT\",\r\n  \"marca\": \"RENAULT\",\r\n  \"modelo\": \"Sandero RS\",\r\n  \"anio\": 2017,\r\n  \"kilometrajeActual\": 72000\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/vehiculos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos"
+              ]
+            },
+            "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+          },
+          "response": []
+        },
+        {
+          "name": "ActualizarKilometraje",
+          "id": "a19b9faf-3532-4292-b6d0-f07518da67d0",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"kilometrajeActual\": 127000\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/3/kilometraje",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "3",
+                "kilometraje"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetVehiculoPorId",
+          "id": "1dab119f-e735-41bd-b1d0-0bb2d08c9053",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/2",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetVehiculoPorPatente",
+          "id": "e3bcc387-0df1-46ae-93af-5aab4646abc0",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/patente/AB045UT",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "patente",
+                "AB045UT"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMantenimientosPorVehiculo",
+          "id": "55b2d3d5-c18a-4b09-8315-b679025cd786",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/1/mantenimientos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "1",
+                "mantenimientos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetMantenimientosActivosPorVehiculo Copy",
+          "id": "faf601c3-eccd-4758-a62e-4b7132458057",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/1/mantenimientos/activos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "1",
+                "mantenimientos",
+                "activos"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ChequearDisponibilidad",
+          "id": "6d828c9b-d1ff-4435-bdfd-c075fbbce0f9",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/4/disponibilidad",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "4",
+                "disponibilidad"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "f97b967a-7298-45cc-a20b-8e659d52ca91"
+    },
+    {
+      "name": "Mantenimientos",
+      "item": [
+        {
+          "name": "AsociarMantenimientoAVehiculo",
+          "id": "4f20103c-6153-43c8-913e-895fa9f40a1f",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"tipoMantenimiento\": \"FRENOS\",\r\n    \"descripcion\": \"Limpieza profunda\",\r\n    \"costoEstimado\": 1000.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/1/mantenimientos",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "1",
+                "mantenimientos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CambiarEstadoMantenimiento",
+          "id": "01f0cf7f-8261-48c0-8117-bcc653c18c13",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estado\": \"EN_PROCESO\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/mantenimientos/100/estado",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "mantenimientos",
+                "100",
+                "estado"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CompletarMantenimiento",
+          "id": "8447acd8-c2d1-49ad-88c2-7ab81f7e975a",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"costoFinal\": 1200.00\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseURL}}/mantenimientos/100/completar",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "mantenimientos",
+                "100",
+                "completar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetCostoTotal",
+          "id": "33dd6a99-daf7-4dde-a007-3c009f8dbed5",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseURL}}/vehiculos/2/mantenimientos/costo-total",
+              "host": [
+                "{{baseURL}}"
+              ],
+              "path": [
+                "vehiculos",
+                "2",
+                "mantenimientos",
+                "costo-total"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "2e65f335-7aff-43b8-a0fc-ca59340a8bba"
+    }
+  ],
+  "variable": [
+    {
+      "id": "cdd899f2-8574-4991-853c-3748b473f7ae",
+      "key": "baseURL",
+      "value": "http://localhost:8080/api/v1"
+    }
+  ]
+}
