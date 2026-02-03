@@ -187,3 +187,4 @@ Todas las decisiones finales de diseño, estructura y comportamiento de la aplic
 - Se permitió que un vehículo tenga múltiples mantenimientos activos, ya que el enunciado no lo prohíbe.
 - La disponibilidad del vehículo se calcula por la existencia de **al menos un mantenimiento activo**, alineado al requerimiento.
 - El proyecto está pensado como una base clara y extensible, no como un sistema cerrado.
+-  Esta versión está pensada para uso interno. Se asume que los consumidores cuentan con acceso a la documentación (Swagger/OpenAPI) y conocen los valores válidos (por ejemplo, enums).
