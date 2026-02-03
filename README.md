@@ -1,4 +1,4 @@
-# Vehicle Manager API – Challenge Técnico
+# Vehicle Manager API – Business Case
 
 API REST desarrollada en **Java + Spring Boot** para la gestión de vehículos y sus mantenimientos, como parte de un ejercicio técnico.
 
