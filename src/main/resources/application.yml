@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/kavakpostgre?options=-c%20TimeZone%3DUTC
-    username: kavak
-    password: kavak
+    url: jdbc:postgresql://localhost:5432/ocampopostgre?options=-c%20TimeZone%3DUTC
+    username: ocampo
+    password: ocampo
     driver-class-name: org.postgresql.Driver
 
   flyway:

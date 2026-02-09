@@ -1,16 +1,16 @@
 services:
   postgres:
     image: postgres:16
-    container_name: kavak-postgres
+    container_name: ocampo-postgres
     environment:
-      POSTGRES_DB: kavakpostgre
-      POSTGRES_USER: kavak
-      POSTGRES_PASSWORD: kavak
+      POSTGRES_DB: ocampopostgre
+      POSTGRES_USER: ocampo
+      POSTGRES_PASSWORD: ocampo
       TZ: UTC
     ports:
       - "5432:5432"
     volumes:
-      - kavak_pgdata:/var/lib/postgresql/data
+      - ocampo_pgdata:/var/lib/postgresql/data
     entrypoint:
       - bash
       - -c
@@ -18,4 +18,4 @@ services:
         ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /usr/share/zoneinfo/America/Buenos_Aires
         exec docker-entrypoint.sh postgres
 volumes:
-  kavak_pgdata:
+  ocampo_pgdata:
